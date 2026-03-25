@@ -14,19 +14,33 @@ function App() {
     expression: string;
     result: string;
   }
+
   const [history, setHistory] = useState<historyItem[]>([]);
-  
+
+  const operators : string[] = ['/','*','(',')','-','+','sin','cos','tan','^','.'];
 
   const handleClick = (value: string) => {
     const exp : string = input;
-    if (value == "sqrt") {
+    if(input.length >= 20)
+    {
+      setInput("Limit Exceed");
+    }
+    else if(value === input[input.length-1])
+    {
+        setInput(input);
+    }
+    else if(operators.includes(value) && operators.includes(input[input.length-1])){
+      const str : string = input.slice(0,input.length-1) + value;
+        setInput(str);
+    }
+    else if (value == "sqrt") {
       const result = Math.sqrt(Number(input));
       setInput(result.toString());
-      setHistory([...history, {expression: exp , result: evaluate(input).toString()}]);
+      setHistory([...history, {expression: exp , result: Math.sqrt(Number(input)).toString() }]);
     } else if (value == "sq") {
       const result = Math.pow(Number(input), 2);
       setInput(result.toString());
-      setHistory([...history, {expression: exp , result: evaluate(input).toString()}]);
+      setHistory([...history, {expression: exp , result: Math.pow(Number(input), 2).toString()}]);
     } else if (value === "=") {
       try {
         setInput(evaluate(input).toString());
@@ -103,7 +117,7 @@ const clearAll = () => {
         {buttons.map((btn) => (
           <Button key={btn} value={btn} onClick={handleClick} />
         ))}
-        <button className = 'hisbutton' onClick = {showHistory}> History 
+        <button className = 'hisbutton' onClick = {showHistory }> History 
          
         </button>
       </div>
