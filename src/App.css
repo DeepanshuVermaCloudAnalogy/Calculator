@@ -1,0 +1,107 @@
+/* App.css */
+.calculator {
+    width: 300px;
+    margin: 50px auto;
+    border: 2px solid #333;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.display {
+    height: 50px;
+    background: #eee;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 24px;
+    text-align: right;
+}
+
+.button-cal {
+    width: 50px;
+    height: 50px;
+    margin: 3px;
+    font-size: 18px;
+}
+.hisbutton{
+  font-size: 1.5em;
+  background-color: #eee;
+  border: 0.5px solid; 
+  border-color: #333;
+  margin: 5px;
+  width: 90%;
+  height: 40px;
+  align-content: center;
+  text-align: center;
+}
+.gotocal{
+   width: 50%;
+}
+
+
+.history-container {
+  width: 300px;             
+  margin: 50px auto;
+  border: 2px solid #333;
+  padding: 10px;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+
+
+.history-title {
+  font-size: 1.5em;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+
+.history-list {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+
+.entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #eee;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+
+  padding: 8px;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+}
+
+
+.entry button {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 3px 8px;
+  cursor: pointer;
+}
+
+.entry button:hover {
+  background: #ff1a1a;
+}
+
+
+.clear-btn {
+  width: 100%;
+  height: 40px;
+  margin-top: 5px;
+
+  background: #ddd;
+  border: 1px solid #333;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.clear-btn:hover {
+  background: #ccc;
+}
